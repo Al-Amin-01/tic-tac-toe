@@ -16,13 +16,19 @@ let newGame=document.querySelector("#new-btn");
 let resetGame=document.querySelector("#reset-btn");
 let turn=true;
 let count=0;
+
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
         if(turn){
+            box.classList.add("green");
+            box.classList.remove("red");
+            
             box.innerText="o";
             turn=false;
         }
         else{
+            box.classList.add("red");
+            box.classList.remove("green");
             box.innerText="x";
             turn=true;
         }
